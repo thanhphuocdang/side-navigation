@@ -1,0 +1,140 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">AMS Application</h1>
+  </mat-toolbar>
+  <mat-drawer-container class="example-container_2" autosize>
+    <mat-drawer
+      #drawer
+      class="example-sidenav"
+      mode="side"
+      opened="true"
+      style="background-color: #fff"
+    >
+      <div style="display: flex; flex-wrap: wrap">
+        <div
+          style="
+            width: auto;
+            padding: 5px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-bottom: solid #eee 1px;
+          "
+        >
+          <div style="display: flex; flex-wrap: wrap">
+            <button
+              class="menu-icon"
+              mat-icon-button
+              (click)="showFiller = true"
+            >
+              <mat-icon>home</mat-icon>
+            </button>
+            <div *ngIf="showFiller" style="width: 200px">
+              <p>Home</p>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap">
+            <button
+              class="menu-icon"
+              mat-icon-button
+              (click)="showFiller = true"
+            >
+              <mat-icon>schedule_send</mat-icon>
+            </button>
+            <div *ngIf="showFiller" style="width: 200px">
+              <p>Notifications</p>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap">
+            <button
+              class="menu-icon"
+              mat-icon-button
+              (click)="showFiller = true"
+            >
+              <mat-icon>cached</mat-icon>
+            </button>
+            <div *ngIf="showFiller" style="width: 200px">
+              <p>Maintenance process</p>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap">
+            <button
+              class="menu-icon"
+              mat-icon-button
+              (click)="showFiller = true"
+            >
+              <mat-icon>event</mat-icon>
+            </button>
+            <div *ngIf="showFiller" style="width: 200px">
+              <p>Settings_input_composite</p>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap">
+            <button
+              class="menu-icon"
+              mat-icon-button
+              (click)="showFiller = true"
+            >
+              <mat-icon>settings_input_composite</mat-icon>
+            </button>
+            <div *ngIf="showFiller" style="width: 200px">
+              <p>Settings_input_composite</p>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap">
+            <button
+              class="menu-icon"
+              mat-icon-button
+              (click)="showFiller = true"
+            >
+              <mat-icon>settings_backup_restore</mat-icon>
+            </button>
+            <div *ngIf="showFiller" style="width: 200px">
+              <p>Settings_backup_restore</p>
+            </div>
+          </div>
+          <div class="spacer"></div>
+
+
+          <!-- Last item -->
+          <div style=" display: flex; flex-wrap: wrap; position: fixed; bottom: 10px; flex-direction: column; " >
+
+            <div style=" display: flex; flex-wrap: wrap;">
+              <button
+                class="menu-icon"
+                mat-icon-button
+                (click)="showFiller = true">
+                <mat-icon *ngIf="!showFiller" >arrow_forward_ios</mat-icon>
+              </button>
+              <div *ngIf="showFiller" style="width: 200px">
+                <div style="display: flex; justify-content: space-between;">
+                  <p></p>
+                  <button
+                  class="menu-icon"
+                  mat-icon-button
+                  (click)="showFiller = false">
+                  <mat-icon>arrow_back_ios</mat-icon>
+                </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-drawer>
+
+    <div style="height: 100%;   display: flex; flex-direction: column;">
+      <div class="breakcrumb" >
+        <p-breadcrumb [model]="items"></p-breadcrumb>
+      </div>
+      <div class="example-sidenav-content" style="background-color: #fff">
+        <button type="button" mat-button>Application content</button>
+      </div>
+    </div>
+  </mat-drawer-container>
+</div>
+
+<!-- (click)="snav.toggle()" -->
